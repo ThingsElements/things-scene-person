@@ -1,1 +1,1 @@
-export { default as Compass } from './compass'
+export { default as Person } from './person'
