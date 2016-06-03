@@ -61,8 +61,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                                bounds="{{bounds}}">
         <fieldset>
           <legend>person style</legend>
-          <label>imageNumber</label>
-          <input type="number" value-as-number="{{target.imageNumber::change}}" min="0" max="100" step="1"/>
+  <!--         <label>imageNumber</label>
+          <input type="number" value-as-number="{{target.imageNumber::change}}" min="0" max="100" step="1"/> -->
         </fieldset>
       </things-scene-properties>
 
@@ -73,16 +73,15 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         var app = document.querySelector('#app')
 
         app.model = {
-          fillStyle: '#0EB22A',
+          // fillStyle: '#0EB22A',
           width: 1500,
           height: 1000,
           components: [{
             type: 'person',
-            left: 100,
-            top: 100,
-            width: 50,
-            height: 100,
-            imageNumber: 1,
+            cx:100,
+            cy:100,
+            rx: 100,
+            ry:100,
             fillStyle: '#F2F2F2',
             strokeStyle: '#AAAAAA',
             lineWidth: 10,

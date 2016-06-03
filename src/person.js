@@ -1,32 +1,32 @@
-var { Component, Rect } = scene
+var { Component, Ellipse } = scene
 
-export default class Person extends Rect {
+export default class Person extends Ellipse {
 
   _draw(context) {
     var {
-      imageNumber = 1,
       hidden = false,
-      fillStyle,
-      left,
-      top,
-      width,
-      height
+      cx,
+      cy,
+      rx,
+      ry
     } = this.model;
 
     if(!hidden){
 
       context.beginPath()
+      context.ellipse(cx, cy, rx, ry, 0, 0, Math.PI * 2)
+      context.fillStyle = '#39b44a'
+      context.fill()
 
-      context.rect(left, top, width, height)
+      context.beginPath()
+      context.ellipse(cx, cy, rx, ry, 0, 0, Math.PI * 2)
       this.model.fillStyle = {
         type: 'pattern',
         fitPattern: true,
-        image: '../images/' + imageNumber + '.png'
+        image: '../images/person.png'
       }
       this.drawFill(context)
     }
   }
-
-  get controls(){}
 }
 Component.register('person', Person)
