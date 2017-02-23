@@ -2,6 +2,10 @@ var { Component, Ellipse } = scene
 
 export default class Person extends Ellipse {
 
+  is3dish() {
+    return true
+  }
+
   _draw(context) {
     var {
       cx,
@@ -25,4 +29,5 @@ export default class Person extends Ellipse {
     this.drawFill(context)
   }
 }
+
 Component.register('person', Person)
