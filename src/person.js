@@ -1,3 +1,6 @@
+/*
+ * Copyright © HatioLab Inc. All rights reserved.
+ */
 var { Component, Ellipse } = scene
 
 export default class Person extends Ellipse {
