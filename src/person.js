@@ -1,7 +1,23 @@
 /*
  * Copyright © HatioLab Inc. All rights reserved.
  */
-var { Component, Ellipse, RectPath, Shape } = scene
+var {
+  Component,
+  RectPath,
+  Shape
+} = scene
+
+const NATURE = {
+  mutable: false,
+  resizable: true,
+  rotatable: true,
+  properties: [{
+    type: 'number',
+    label: 'depth',
+    name: 'depth',
+    property: 'depth'
+  }]
+}
 
 export default class Person extends RectPath(Shape) {
 
@@ -39,6 +55,11 @@ export default class Person extends RectPath(Shape) {
     }
     this.drawFill(context)
   }
+
+  get nature() {
+    return NATURE
+  }
 }
 
 Component.register('person', Person)
+
