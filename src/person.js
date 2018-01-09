@@ -1,9 +1,9 @@
 /*
  * Copyright © HatioLab Inc. All rights reserved.
  */
-var { Component, Ellipse } = scene
+var { Component, Ellipse, RectPath, Shape } = scene
 
-export default class Person extends Ellipse {
+export default class Person extends RectPath(Shape) {
 
   is3dish() {
     return true
@@ -11,11 +11,19 @@ export default class Person extends Ellipse {
 
   _draw(context) {
     var {
-      cx,
-      cy,
-      rx,
-      ry
-    } = this.model;
+      left,
+      top,
+      width,
+      height
+    } = this.bounds;
+
+    var {
+      x: cx,
+      y: cy
+    } = this.center
+
+    var rx = width / 2
+    var ry = height / 2
 
     context.beginPath()
     context.ellipse(cx, cy, rx, ry, 0, 0, Math.PI * 2)
